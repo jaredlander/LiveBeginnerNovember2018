@@ -60,3 +60,18 @@ build.x( ~ Pop * Size * Random, data=boros)
 boros
 build.x( ~ Boro, data=boros)
 build.x( ~ Pop + Size + Boro, data=boros)
+
+head(tips)
+
+head(build.x( ~ total_bill + smoker + day, data=tips))
+
+tip3 <- lm(tip ~ total_bill + size + smoker, data=tips)
+summary(tip3)
+coefplot(tip3, sort='magnitude')
+
+tip4 <- lm(tip ~ total_bill + size + smoker + day, data=tips)
+coefplot(tip4, sort='magnitude')
+
+AIC(tip1, tip2, tip3, tip4)
+summary(tip2)
+BIC(tip1, tip2, tip3, tip4)
