@@ -40,3 +40,23 @@ ggplot(aug_tip2, aes(x=tip, y=.fitted)) + geom_point() +
 
 summary(tip2)
 coefplot(tip2, sort='magnitude')
+
+head(tips)
+table(tips$day)
+
+source(
+'https://raw.githubusercontent.com/jaredlander/LiveBeginnerNovember2018/master/code/boros.r'
+)
+
+boros
+
+build.x( ~ Pop, data=boros)
+build.x( ~ Pop + Size, data=boros)
+build.x( ~ Pop * Size, data=boros)
+1600000*23
+build.x( ~ Pop + Size + Random, data=boros)
+build.x( ~ Pop * Size * Random, data=boros)
+
+boros
+build.x( ~ Boro, data=boros)
+build.x( ~ Pop + Size + Boro, data=boros)
